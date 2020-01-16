@@ -59,7 +59,6 @@ section:before {
 
 .sticker {
 	border-radius: 20% 0% 20% 20%;
-	box-shadow: -5px 5px 3px #7FA0C9;
 }
 
 .social {
@@ -98,6 +97,11 @@ section:before {
     overflow: hidden;
     transform: translateY(-50%);    
 }
+
+.footer {
+	padding: 10px 10px 10px 10px;
+}
+
 /* Animation */
 .anim-typewriter{
   animation: typewriter 2s steps(22) 1s 1 normal both,
