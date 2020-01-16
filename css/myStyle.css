@@ -1,0 +1,113 @@
+body, html {
+	height: 100%;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+section:before {
+    height: 54px;
+    content: "";
+    display:block;
+}
+
+.parallax {
+	background-image: url("../images/header-mtn.jpg");
+	height: 60%;
+	/* Create the parallax scrolling effect */
+  	background-attachment: fixed;
+  	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.7;
+	font-family: 'Roboto Slab', monospace;
+	color: white;
+}
+
+.px-lg-6 {
+	padding-left:5rem!important;
+	padding-right:5rem!important;
+}
+
+.text-color-lavender {
+	color: #63A8FF;
+}
+
+.text-color-blue {
+	color: #1E84B3;
+}
+
+.text-color-teal {
+	color: #22959C;
+}
+
+.text-color-seafoam {
+	color: #1EB391;
+}
+
+.carousel {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.navbar {
+	opacity: 0.94;
+}
+
+.sticker {
+	border-radius: 20% 0% 20% 20%;
+	box-shadow: -5px 5px 3px #7FA0C9;
+}
+
+.social {
+	font-size: 300%;
+	color: #1E84B3;
+  	transition: 0.3s;
+	padding-bottom: 20px;
+}
+
+.social:hover {
+	color: #3DADE0;
+}
+
+.pdf-frame {
+	width: 100% !important;
+	height: 600px !important;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+	.parallax {
+		background-attachment: scroll;
+	}
+}
+
+/* Typewrter effect */
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(22) 1s 1 normal both,
+             blinkTextCursor 500ms steps(22) 8 normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 6em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
