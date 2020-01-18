@@ -92,16 +92,50 @@ section:before {
 }
 
 .course-list {
-	max-height: 300px;
 	font-size: 70%;
-	background-color: #F2F7FF;
-	padding: 10px 10px 0px 10px;
+	padding: 20px 0px 0px 0px !important;
 	border-radius: 10px;
 }
 
 .course-list ul {
 	list-style: inside;
 	padding-left: 0px;
+}
+
+.course-title {
+	color: #1E84B3;
+}
+
+.course-button:hover {
+	background-color: #f2f7ff !important; 
+}
+
+.course-button:hover .course-title {
+	color: #3DADE0; 
+}
+
+.course-title i {
+	float: right;
+	opacity: 0.6;
+	padding-top: 5px;
+	font-size: 80%;
+}
+
+.course-title-icon {
+	display: inline;
+}
+
+.collapsing i {
+    -webkit-transition: none;
+    transition: none !important;
+}
+
+.collapsing i:before {
+	content: '.' !important;
+}
+
+.course-card {
+	background-color: #f2f7ff !important;
 }
 
 .social {

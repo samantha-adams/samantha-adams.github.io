@@ -97,52 +97,70 @@
 					</center>
 				</div>
 				<div class="col-5">
-					<p class="h4">Hi there! I'm Sam.</p>						
-					<p class="h6">Currently:</p>
+					<p class="h3">Hi there! I'm Sam.</p>						
+					<p class="h5">Currently:</p>
 					<ul>
-						<li class="small h6 text-muted">Completing B.S. in Electrical Engineering & Computer Sciences at UC Berkeley (December 2020)</li>
+						<li class="small h5 text-muted">Completing B.S. in Electrical Engineering & Computer Sciences at UC Berkeley (December 2020)</li>
 					</ul>
-					<p class="h6">Previously:</p>
+					<p class="h5">Previously:</p>
 					<ul>
-						<li class="small h6 text-muted">3 years of experience working with technology in a corporate setting</li>
-						<li class="small h6 text-muted">4+ years teaching and mentoring both children and undergrads</li>
+						<li class="small h5 text-muted">3 years of experience working with technology in a corporate setting</li>
+						<li class="small h5 text-muted">4+ years teaching and mentoring both children and undergrads</li>
 					</ul>
-					<p class="h6">Areas of Interest:</p>
+					<p class="h5">Areas of Interest:</p>
 						<div class="row justify-content-start">
 							<div class="col-5">
 								<ul>
-									<li class="small h6 text-muted">Machine Learning</li>
-									<li class="small h6 text-muted">Self-Driving Cars</li>
-									<li class="small h6 text-muted">Sustainability</li>
+									<li class="small h5 text-muted">Machine Learning</li>
+									<li class="small h5 text-muted">Self-Driving Cars</li>
+									<li class="small h5 text-muted">Sustainability</li>
 								</ul>
 							</div>
 							<div class="col-5">
 								<ul>
-									<li class="small h6 text-muted">Software Engineering</li>
-									<li class="small h6 text-muted">Project Management</li>
-									<li class="small h6 text-muted">Teaching</li>
+									<li class="small h5 text-muted">Software Engineering</li>
+									<li class="small h5 text-muted">Project Management</li>
+									<li class="small h5 text-muted">Teaching</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="col-4">
-						<p class="h6">Highlighted Coursework:</p>
-						<div class="overflow-auto course-list">
-							<ul>
-								<li>CS 61A Structure & Interpretation of Computer Programs</li>
-								<li>CS 61B Data Structures</li>
-								<li>CS 61C Ideas in Computer Architecture (Machine Structures)</li>
-								<li>EE 16A/B Designing Information Devices & Systems</li>
-								<li>CS 70 Discrete Mathematics & Probability Theory</li>
-								<li>CS 170 Efficient Algorithms & Intractable Problems</li>
-								<li>CS 161 Computer Security</li>
-								<li>CS 189 Introduction to Machine Learning</li>
-								<li>JavaScript Web Programming</li>
-								<li>Introduction to Unix</li>
-								<li>C++ Programming</li>
-								<li>Java Programming</li>
-								<li>Android Application Development</li>
-							</ul>
+						<div class="accordion" id="courseAccordion">
+							<div class="card course-card">
+								<a class="course-button" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="true" aria-controls="collapseCourses collapseIconDown collapseIconUp">
+									<div class="card-header" id="courseHeader">
+										<span class="h6 course-title">
+											Courses Taken: 
+										</span>
+										<span class="course-title course-title-icon collapse multi-collapse show" id="collapseIconDown">
+											<i class="fas fa-chevron-down"></i>
+										</span>
+										<span class="course-title course-title-icon icon collapse multi-collapse" id="collapseIconUp">
+											<i class="fas fa-chevron-up"></i>
+										</span>
+										<div id="collapseCourses" class="collapse multi-collapse" aria-labelledby="courseHeader" data-parent="#courseAccordion">
+											<div class="card-body course-list">
+												<ul>
+													<li>Java Programming</li>
+													<li>C++ Programming</li>
+													<li>Android Application Development</li>
+													<li>JavaScript Web Programming</li>
+													<li>Introduction to Unix</li>
+													<li>CS 61A Structure & Interpretation of Computer Programs</li>
+													<li>CS 61B Data Structures</li>
+													<li>CS 61C Ideas in Computer Architecture <small>(Machine Structures)</small></li>
+													<li>EE 16A/B Designing Information Devices & Systems</li>
+													<li>CS 70 Discrete Mathematics & Probability Theory</li>
+													<li>CS 170 Efficient Algorithms & Intractable Problems</li>
+													<li>CS 161 Computer Security (In Progress)</li>
+													<li>CS 189 Introduction to Machine Learning (In Progress)</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
