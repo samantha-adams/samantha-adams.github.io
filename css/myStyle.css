@@ -14,9 +14,13 @@ section:before {
     display:block;
 }
 
-.parallax {
+.parallax-header {
 	background-image: url("../images/header-mtn.jpg");
-	height: 100%;
+	height: 100% !important;
+}
+
+.parallax {
+	height: 60%;
 	/* Create the parallax scrolling effect */
   	background-attachment: fixed;
   	background-position: top;
@@ -25,7 +29,23 @@ section:before {
 	opacity: 0.7;
 	font-family: 'Roboto Slab', monospace;
 	color: white;
+	margin-top: 5% !important;
 }
+
+.parallax-section1 {
+	background-position: center;
+	background-image: url("../images/header-feet.png");
+}
+
+.parallax-section2 {
+	background-position: top;
+	background-image: url("../images/snow.jpg");
+}
+
+.parallax-section3 {
+	background-image: url("../images/alps.jpg");
+}
+
 
 .px-lg-6 {
 	padding-left:5rem!important;
