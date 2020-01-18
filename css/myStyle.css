@@ -38,12 +38,11 @@ section:before {
 }
 
 .parallax-section2 {
-	background-position: top;
-	background-image: url("../images/snow.jpg");
+	background-image: url("../images/alps.jpg");
 }
 
 .parallax-section3 {
-	background-image: url("../images/alps.jpg");
+	background-image: url("../images/snow.jpg");
 }
 
 
@@ -95,8 +94,9 @@ section:before {
 .course-list {
 	max-height: 300px;
 	font-size: 70%;
-	background-color: #efefef;
+	background-color: #F2F7FF;
 	padding: 10px 10px 0px 10px;
+	border-radius: 10px;
 }
 
 .course-list ul {
