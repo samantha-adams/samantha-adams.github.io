@@ -74,6 +74,9 @@ section:before {
 	color: #1E84B3;
 }
 
+a .text-color-blue:hover{
+	color: #3DADE0;
+}
 .text-color-teal {
 	color: #22959C;
 }
