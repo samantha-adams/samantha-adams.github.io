@@ -29,7 +29,6 @@ section:before {
 	opacity: 0.7;
 	font-family: 'Roboto Slab', monospace;
 	color: white;
-	margin-top: 5% !important;
 }
 
 .parallax-section1 {
@@ -100,32 +99,17 @@ a .text-color-blue:hover{
 	border-radius: 10px;
 }
 
+.card:hover .course-title {
+	color: rgba(34, 149, 156, 1);
+}
+
+.course-list li:hover {
+	color: rgba(34, 149, 156, 1);
+}
+
 .course-list ul {
 	list-style: inside;
 	padding-left: 0px;
-}
-
-.course-title {
-	color: #1E84B3;
-}
-
-.course-button:hover {
-	background-color: #f2f7ff !important; 
-}
-
-.course-button:hover .course-title {
-	color: #3DADE0; 
-}
-
-.course-title i {
-	float: right;
-	opacity: 0.6;
-	padding-top: 5px;
-	font-size: 80%;
-}
-
-.course-title-icon {
-	display: inline;
 }
 
 .collapsing i {
@@ -135,10 +119,6 @@ a .text-color-blue:hover{
 
 .collapsing i:before {
 	content: '.' !important;
-}
-
-.course-card {
-	background-color: #f2f7ff !important;
 }
 
 .social {
