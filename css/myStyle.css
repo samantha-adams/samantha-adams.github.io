@@ -133,6 +133,11 @@ a .text-color-blue:hover{
 	color: #3DADE0;
 }
 
+.centered {
+	float: none;
+	padding: 20px 10px;
+}
+
 .pdf-frame {
 	width: 100% !important;
 	height: 600px !important;
@@ -167,11 +172,14 @@ a .text-color-blue:hover{
 .anim-typewriter{
   animation: typewriter 2s steps(22) 1s 1 normal both,
              blinkTextCursor 500ms steps(22) 8 normal;
+	font-size: xxx-large;
 }
+
 @keyframes typewriter{
   from{width: 0;}
   to{width: 6em;}
 }
+
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
   to{border-right-color: transparent;}
