@@ -1,0 +1,16 @@
+For use in a React component, make a list of Constellations that can be use to determine the x and y object position of a star in relation to its constellation.
+
+Each object in the Constellations list should have a name property, that is the name of the constellation, and a list of all stars in the constellation with the x and y coordinates for the star.
+
+Example: 
+  { name: 'Orion', stars: [
+      { x: 50, y: 50 },
+      { x: 55, y: 48 },
+      { x: 58, y: 52 },
+      // Add more stars for Orion
+    ]
+  },
+
+  Be sure to include every single star within the stars list for each constellation.
+
+  Start with just two constellations and every start within them.
