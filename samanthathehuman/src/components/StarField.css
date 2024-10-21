@@ -1,0 +1,17 @@
+.star-field {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: white;
+  position: relative;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+font-weight: 400;
+}

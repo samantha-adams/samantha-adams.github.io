@@ -1,0 +1,25 @@
+.category-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(0.5fr, 1fr)); */
+  grid-auto-rows: minmax(20%, auto);
+  grid-auto-columns: minmax(10%, 1fr);
+  gap: clamp(5%, 2vw, 0.1fr);
+  position: relative;
+}
+
+.category-star {
+  position: relative;
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: font-size 0.4s ease, opacity 0.8s ease;
+  opacity: 0.6;
+}
+
+.category-star.focused {
+  transform: scale(1.5);
+  font-size: 2.5rem;
+  opacity: 1;
+}

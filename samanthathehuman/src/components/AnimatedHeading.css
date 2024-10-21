@@ -1,0 +1,6 @@
+.heading span {
+  font-size: 2rem;
+  min-width: 1rem;
+  display: inline-block;
+}
+
