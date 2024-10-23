@@ -1,6 +1,16 @@
+.heading {
+  z-index: 999;
+  height: 5rem;
+  align-content: center;
+}
+
 .heading span {
-  font-size: 2rem;
+  font-size: 3rem;
   min-width: 1rem;
   display: inline-block;
+  transition: font-size 0.3s ease;
+}
+.heading span:hover {
+  font-size: 3.5rem;
 }
 

@@ -14,3 +14,17 @@ Example:
   Be sure to include every single star within the stars list for each constellation.
 
   Start with just two constellations and every start within them.
+
+
+  ////
+
+
+  This website is a personal website to showcase my education, work experience, skills, and other interests. It will be space themed and should have a programming or technology style.
+
+The background should be dark grey with stars scattered around. Some stars should be grouped into constellations that are highlighted together when interacted with.
+
+At the top of the page, it should say my name: Samantha Adams. This always persists.
+
+Arranged around the page should be the following categories: Education, Interests, Industry, Projects, Travel. I've attached a mockup of what this might look like.
+
+Every interaction should provide some kind of feedback. Moving the mouse over an element should gently shift it across the screen in the direction the mouse is moving and should play a sound. It's important that all animations are smooth and highly performant.

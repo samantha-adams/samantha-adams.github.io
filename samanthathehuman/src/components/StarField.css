@@ -4,7 +4,8 @@
   overflow: hidden;
   background-color: #1a1a1a;
   color: white;
-  position: relative;
+  position: relative;  
+  touch-action: none;
 }
 
 .text-content {

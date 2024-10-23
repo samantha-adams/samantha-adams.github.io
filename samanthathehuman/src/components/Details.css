@@ -1,0 +1,8 @@
+.detail-group {
+  font-size: 1rem;
+  display: none;
+  row-gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 4rem;
+  flex-direction: column;
+}

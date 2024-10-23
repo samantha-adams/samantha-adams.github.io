@@ -1,28 +1,29 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { getRandomStars } from '../utils/randomStars';
-import Constellation from './Constellation';
-import { StarProps } from './Star';
+import Constellation, { ConstellationProps } from './Constellation';
 
-interface Constellation {
-  stars: StarProps[];
-}
-
-const CONSTELLATION_COUNT = 100;
-
-const generateConstellations = (): Constellation[] => {
+const generateConstellations = (count: number): ConstellationProps[] => {
   const constellations = [];
-  for (let i = 0; i < CONSTELLATION_COUNT; i++) {
+  for (let i = 0; i < count; i++) {
     const stars = getRandomStars();
     constellations.push({ stars });
   }
   return constellations;
 };
 
-const Constellations: React.FC = () => {
-  const generatedConstellations = useMemo(() => generateConstellations(), []);
+const Constellations: React.FC<{ count?: number }> = ({ count=1 }) => {
+  const [constellations, setConstellations] = useState(generateConstellations(count));
+  useEffect(() => {
+    const makeNewConstellations = () => {
+      setConstellations(generateConstellations(count));
+    }
+    window.addEventListener('resize', makeNewConstellations);
+    return () => window.removeEventListener('resize', makeNewConstellations);
+  }, []);
+  
   return (
     <div className="constellations" >
-      {generatedConstellations.map((constellation, index) => (
+      {constellations.map((constellation, index) => (
         <Constellation key={`constellation-${index}`} stars={constellation.stars} />
       ))}
     </div>

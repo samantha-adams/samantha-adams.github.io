@@ -1,7 +1,7 @@
-import { useContext, useMemo, useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { PointerEventContext } from '../App';
 import { getRandomNumberInRange, getRandomOffset } from '../utils/random';
+import PointerEventContext from '../context/PointerEventContext';
 
 export interface StarProps {
   x: number;
@@ -9,87 +9,89 @@ export interface StarProps {
   size: number;
 }
 
-const Star: React.FC<StarProps> = ({ size, x, y }) => {  
-  const starRef = useRef<SVGSVGElement>(null);
-  let timelineRef = useRef(gsap.timeline());
-  
-  const [isAnimationInProgress, setIsAnimationInProgress] = useState<boolean>(false);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
-  const { mouseDirection = 0 } = useContext(PointerEventContext);
-
+const getXYShift: (angle: number) => { xShift: number, yShift: number } = (angle)=> {
   let xShift = 0;
   let yShift = 0;
-  if (mouseDirection > 270) { // upper right quadrant
-    // console.log("upper right")
+  if (angle > 270) { // upper right quadrant
     xShift = 1;
     yShift = 1;
-  } else if (mouseDirection <= 270 && mouseDirection > 180) { // upper left quadrant
-    // console.log("upper left")
+  } else if (angle <= 270 && angle > 180) { // upper left quadrant
     xShift = -1;
     yShift = 1;
-  } else if (mouseDirection <= 180 && mouseDirection > 90) { // lower left quadrant
-    // console.log("lower left")
+  } else if (angle <= 180 && angle > 90) { // lower left quadrant
     xShift = -1;
     yShift = -1;
-  } else if (mouseDirection <= 90) { // lower right quadrant
-    // console.log("lower right")
+  } else if (angle <= 90) { // lower right quadrant
     xShift = 1;
     yShift = -1;
   }
+  return { xShift, yShift }
+}
 
-  const startAnimation = useMemo(() => () => {
-    timelineRef.current.set(starRef.current, { transformOrigin:"50% 50%" });
-    timelineRef.current.to(starRef.current, {
-      duration: 0.5,
-      ease: "expoScale(0.5,7,none)",
-      x: xShift * 50,
-      y: yShift * 50,
-    });
-    timelineRef.current.to(starRef.current, {
-      duration: 0.5 * getRandomNumberInRange(1, 3),
-      ease: "expoScale(0.5,7,none)",
-      scale: 2,  
-    });
-    timelineRef.current.to(starRef.current, {
-      duration: 1.5 & getRandomNumberInRange(1, 5),
-      ease: "expoScale(0.5,7,none)",
-      x: xShift * getRandomOffset(window.innerWidth),
-      y: yShift * getRandomOffset(window.innerHeight),
-      scale: 0,
-    });
-    timelineRef.current.to(starRef.current, {
-      duration: 1.5 * getRandomNumberInRange(1, 5),
-      x: 0,
-      y: 0,
-      left: x,
-      top: y,
-      scale: 1,
-      onComplete: endAnimation,
-    });
-    setIsAnimationInProgress(true);
-    setIsAnimating(true);
-  }, [xShift, yShift]);
+const Star: React.FC<StarProps> = ({ size, x, y }) => {  
+  const starRef = useRef<SVGSVGElement>(null);
+  let timelineRef = useRef(gsap.timeline());
+
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isAnimationInProgress, setIsAnimationInProgress] = useState<boolean>(false); 
+
+  const { mouseDirection = 0 } = useContext(PointerEventContext);
+  const { xShift, yShift } = getXYShift(mouseDirection);
+
+  const startAnimation = () => {
+    if (!isAnimating) {
+        setIsAnimating(true);
+        setIsAnimationInProgress(true);
+        timelineRef.current.set(starRef.current, { transformOrigin:"50% 50%" });
+        timelineRef.current.to(starRef.current, {
+          duration: 0.5,
+          ease: "expoScale(0.5,7,none)",
+          x: xShift * 50,
+          y: yShift * 50,
+        });
+        timelineRef.current.to(starRef.current, {
+          duration: 0.5 * getRandomNumberInRange(1, 3),
+          ease: "expoScale(0.5,7,none)",
+          scale: 2,  
+        });
+        timelineRef.current.to(starRef.current, {
+          duration: 1.5 & getRandomNumberInRange(1, 5),
+          ease: "expoScale(0.5,7,none)",
+          x: xShift * getRandomOffset(window.innerWidth),
+          y: yShift * getRandomOffset(window.innerHeight),
+          scale: 0,
+        });
+        timelineRef.current.to(starRef.current, {
+          duration: 1.5 * getRandomNumberInRange(1, 5),
+          x: 0,
+          y: 0,
+          left: x,
+          top: y,
+          scale: 1,
+          onComplete: endAnimation,
+        });
+    }
+  };
   
-  const pauseAnimation = useMemo(() => () => {
+  const pauseAnimation = () => {
     timelineRef.current.pause();
     setIsAnimating(false);
-  }, []);
+  };
   
-  const continueAnimation = useMemo(() => () => {
+  const continueAnimation = () => {
     timelineRef.current.play();
     setIsAnimating(true);
-  }, []);
+  };
 
-  const endAnimation = useMemo(() => () => {
-    setIsAnimationInProgress(false);
+  const endAnimation = () => {
+    setIsAnimationInProgress(false);    
     setIsAnimating(false);
     gsap.timeline({ defaults: { clearProps: true } })
-  }, []);
+  };
 
   const handleMouseEnter = () => {
     if (starRef.current) {
-      if (!isAnimationInProgress) {
+      if (!isAnimationInProgress ) {
         startAnimation();
       } else if (isAnimating) {
         pauseAnimation();
@@ -106,12 +108,12 @@ const Star: React.FC<StarProps> = ({ size, x, y }) => {
   return (
     <svg
       fill={"white"}  
+      id="star"
       height={size}
       width={size}
       viewBox={`0 0 ${84} ${101}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      pointerEvents="visiblePainted"    
       ref={starRef}
       style={{
         position: 'absolute',

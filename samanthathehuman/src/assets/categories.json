@@ -5,34 +5,44 @@
       ["B.S. Electrical Engineering and Computer Science", "U.C. Berkeley 2020", "Regents' and Chancellor's Scholar"],
       ["13 Early Childhood Education Units"]
     ],
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "x": 20,
+    "y": 20
   },
   {
     "name": "Interests",
     "detailLines": [
       ["Robotics", "AI", "Machine Learning"]
     ],
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "x": 60,
+    "y": 20
   },
   {
     "name": "Industry",
     "detailLines": [
       ["Tech Industry", "Focus on Human-Robot Interaction"]
     ],
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "x": 20,
+    "y": 60
   },
   {
     "name": "Projects",
     "detailLines": [
       ["Project A: Description", "Project B: Description"]
     ],
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "x": 80,
+    "y": 60
   },
   {
     "name": "Travel",
     "detailLines": [
       ["Visited 10+ Countries", "Travel Photography"]
     ],
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "x": 60,
+    "y": 80
   }
 ]

@@ -8,7 +8,7 @@ const PAGE_TITLE = "Hello World";
 const StarField: React.FC = () => {
   return (
     <div className="star-field">
-      <Constellations />
+      <Constellations count={25} />
       <div className="text-content">
         <AnimatedHeading text={PAGE_TITLE} />
         <CategoryStars />
