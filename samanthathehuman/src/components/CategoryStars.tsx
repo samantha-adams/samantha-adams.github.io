@@ -38,7 +38,12 @@ const ease = "expoScale(0.5,7,none)";
 const animateIfUnfocused = (name: string, x: number, y: number, focusedCategory: string | null) => {
   const hasFocusedCategory = !!focusedCategory;
   if (name !== focusedCategory) {
-    gsap.to(`#${name} .detail-group`, { opacity: 0, display: 'none', duration: 1, ease });
+    gsap.to(`#${name} .detail-group`, {
+      opacity: 0,
+      display: 'none',
+      duration: 1,
+      ease,
+    });
     gsap.to(`#${name}`, {
       ...(hasFocusedCategory ? deemphasizedStyle : initialStyle),
       // left: x,
@@ -50,11 +55,16 @@ const animateIfUnfocused = (name: string, x: number, y: number, focusedCategory:
 };
 
 const animateFocused = (name: string) => {
-  gsap.to(`#${name} .detail-group`, { opacity: 1, display: 'flex', duration: 1, ease });
+  gsap.to(`#${name} .detail-group`, {
+    opacity: 1,
+    display: 'flex',
+    duration: 1,
+    ease,
+  });
   gsap.to(`#${name}`, {
     ...focusedStyle,
     duration: 1,
-    ease,      
+    ease,
   });
 };
 

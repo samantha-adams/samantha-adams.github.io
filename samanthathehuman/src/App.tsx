@@ -1,13 +1,13 @@
 import './App.css';
 import StarField from './components/StarField';
-import MouseDirectionProvider from './context/MouseDirectionProvider';
+import MouseAngleProvider from './context/MouseAngleProvider';
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
-      <MouseDirectionProvider>
+      <MouseAngleProvider>
         <StarField />
-      </MouseDirectionProvider>
+      </MouseAngleProvider>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export const zoomElements = (elements: NodeListOf<HTMLElement>) => { 
+export const zoomElements = (elements: NodeListOf<HTMLElement>) => {
   gsap.set(elements, { transformPerspective: 500 });
   gsap.fromTo(elements, {
     z: -1000,
@@ -12,7 +12,7 @@ export const zoomElements = (elements: NodeListOf<HTMLElement>) => {
     z: 10,
     ease: "slow(0.7,0.7,false)",
     stagger: {
-      from: "random", 
+      from: "random",
       amount: 1,
     }
   });

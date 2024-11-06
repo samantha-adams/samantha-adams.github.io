@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
+
+let timeout: number | undefined = undefined;
 
 const useThrottle = (callback: (...args: any[]) => void, delay: number) => {
-  const [timeout, updateTimeout] = useState<number | undefined>(undefined);
   const lastExecutedRef = useRef(Date.now());
 
   return (...args: any[]) => {
@@ -17,10 +18,10 @@ const useThrottle = (callback: (...args: any[]) => void, delay: number) => {
     } else {
       if (!hasCurrentTimeout) {
         const remainingTime = delay - elapsedTime;
-        updateTimeout(setTimeout(() => {
+        timeout = (setTimeout(() => {
           lastExecutedRef.current = Date.now();
           callback(...args);
-          updateTimeout(undefined);
+          timeout = undefined;
         }, remainingTime));
       }
     }

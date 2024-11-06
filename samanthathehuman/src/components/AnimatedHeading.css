@@ -10,6 +10,7 @@
   display: inline-block;
   transition: font-size 0.3s ease;
 }
+
 .heading span:hover {
   font-size: 3.5rem;
 }

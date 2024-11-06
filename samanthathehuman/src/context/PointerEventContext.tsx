@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
 interface PointerEventContextProps {
-  mouseDirection: number | undefined,
+  mouseAngleRef: React.RefObject<number | undefined>,
 };
 
-const PointerEventContext = createContext<PointerEventContextProps>({ mouseDirection: undefined });
+const PointerEventContext = createContext<PointerEventContextProps>({ mouseAngleRef: { current: undefined } });
 
 export default PointerEventContext;

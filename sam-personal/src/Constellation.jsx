@@ -1,7 +1,7 @@
 import './App.css';
 import Star from './Star.jsx';
 
-const Constellation = ({ name, stars }) => {  
+const Constellation = ({ name, stars }) => { 
   return (
     <div className='constellation-wrapper'>
       <div className='constellation-stars'>
