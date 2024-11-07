@@ -1,0 +1,41 @@
+.starfield {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000;
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(0, 0, 128, 0.2), transparent 70%), /* Deep blue layer */
+    radial-gradient(circle at 70% 40%, rgba(255, 105, 180, 0.1), transparent 50%),  /* Pink-ish blur */
+    radial-gradient(circle at 40% 70%, rgba(255, 165, 0, 0.1), transparent 50%),    /* Orange blur */
+    radial-gradient(circle at 50% 50%, rgba(0, 31, 51, 0.3), transparent 80%),      /* Deep dark blue */
+    radial-gradient(circle at 60% 30%, rgba(0, 32, 64, 0.3), transparent 70%),      /* Gradual transition to lighter blue */
+    radial-gradient(circle at 40% 50%, rgba(1, 62, 74, 0.2), transparent 60%),      /* Greenish-blue hint */
+    radial-gradient(circle at 70% 90%, rgba(35, 110, 118, 0.2), transparent 70%),   /* Soft gradient */
+    radial-gradient(circle at 80% 80%, rgba(255, 127, 80, 0.2), transparent 60%),   /* Coral/Salmon tone */
+    radial-gradient(circle at 20% 90%, rgba(255, 99, 71, 0.2), transparent 70%);    /* Tomato tone */
+  background-size: cover;
+  background-position: center;
+  animation: slight-movement 100s infinite linear;
+}
+
+/* Single, gentle movement animation */
+@keyframes slight-movement {
+  0% { background-position: 0 0, 10% 5%, 15% 15%, center; }
+  100% { background-position: -3% 5%, 12% 6%, 15% 10%, center; }
+}
+
+/* Media query to respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .starfield {
+    animation: none;
+  }
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 400;
+}

@@ -44,7 +44,7 @@ const Star: React.FC<StarProps> = ({ size, x, y }) => {
           y: yShift * 50,
         });
         timelineRef.current.to(starRef.current, {
-          duration: 0.5 * getRandomNumberInRange(1, 3),
+          duration: 0.5 * getRandomNumberInRange(1, 4),
           ease: "expoScale(0.5,7,none)",
           scale: 2,
         });
@@ -101,7 +101,7 @@ const Star: React.FC<StarProps> = ({ size, x, y }) => {
 
   return (
     <svg
-      fill={"white"}
+      fill={"#dddddd"}
       id="star"
       height={size}
       width={size}

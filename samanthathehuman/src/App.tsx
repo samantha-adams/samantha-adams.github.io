@@ -1,12 +1,12 @@
 import './App.css';
-import StarField from './components/StarField';
+import Starfield from './components/StarfieldMain';
 import MouseAngleProvider from './context/MouseAngleProvider';
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
       <MouseAngleProvider>
-        <StarField />
+        <Starfield />
       </MouseAngleProvider>
     </div>
   );

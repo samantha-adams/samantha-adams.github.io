@@ -19,3 +19,12 @@
   pointer-events: visiblePainted;
   transform-origin: 0 0;
 }
+
+.category-star span {
+  min-width: 1rem;
+  transition: font-size 0.3s ease;
+}
+
+.category-star span:hover {
+  font-size: 4rem;
+}

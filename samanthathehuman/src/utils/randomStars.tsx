@@ -2,11 +2,11 @@ import { StarProps } from "../components/Star";
 import { getRandomNumberInRange, getRandomOffset } from "./random";
 
 const MIN_STAR_NUM = 3;
-const MAX_STAR_NUM = 15;
-const MIN_STAR_SIZE = 10;
+const MAX_STAR_NUM = 20;
+const MIN_STAR_SIZE = 0.5;
 const MAX_STAR_SIZE = 25;
 
-const MAX_GROUP_OFFSET = MAX_STAR_SIZE * 4;
+const MAX_GROUP_OFFSET = MAX_STAR_SIZE * 5;
 
 const getRandomXYAndSize = (offsetX: number, offsetY: number): StarProps => (
   {
@@ -22,9 +22,7 @@ export const getRandomStars = (): StarProps[] => {
   const constellationOffsetY = getRandomNumberInRange(1, window.screen.height);
   const stars: StarProps[] = [];
   for (let j = 0; j < numStars; j++) {
-    let position = getRandomXYAndSize(constellationOffsetX, constellationOffsetY);
-
-    stars.push(position);
+    stars.push(getRandomXYAndSize(constellationOffsetX, constellationOffsetY));
   }
   return stars;
 };

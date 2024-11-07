@@ -46,8 +46,8 @@ const animateIfUnfocused = (name: string, x: number, y: number, focusedCategory:
     });
     gsap.to(`#${name}`, {
       ...(hasFocusedCategory ? deemphasizedStyle : initialStyle),
-      // left: x,
-      // top: y,
+      left: x,
+      top: y,
       duration: 1,
       ease,
     });
@@ -104,9 +104,11 @@ const CategoryStars: React.FC = () => {
               onMouseEnter={handleMouseEnter}
               className="category-star"
             >
-                {category.name}
+                {category.name?.split("").map((letter, index) => (
+                  <span key={index}>{`${letter}`}</span>
+                ))}
                 <Details detailLines={category.detailLines} />
-                <Constellations />
+                <Constellations count={3} />
             </div>
           </Clickout>
         );
